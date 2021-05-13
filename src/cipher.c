@@ -189,7 +189,10 @@ static LUA_FUNCTION(openssl_evp_decrypt)
         {
           output_len += len;
           len = input_len - len;
-          ret = EVP_DecryptFinal_ex(c, (byte*)buffer + output_len, &len);
+          if (input_len % 16 != 0)
+            ret = EVP_DecryptFinal_ex(c, (byte*)buffer + output_len, &len);
+          else
+            ret = 1;
           if (ret == 1)
           {
             output_len += len;
