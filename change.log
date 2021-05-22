@@ -1,0 +1,6 @@
+change.log
+
+1.add openwrt platorm by zhaoyu at 2021.05.22
+  <*> cryptsetup.................................................... Cryptsetup
+  <*> cryptsetup-openssl..................... Cryptsetup (with openssl support)
+  <*> openssl-util........................... Open source SSL toolkit (utility)
